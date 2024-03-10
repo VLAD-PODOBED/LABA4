@@ -1,0 +1,93 @@
+*,::after,::before{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html, body {
+    height: 100%; 
+}
+
+button {
+  
+    font-size: 3vh;
+    width: 20rem;
+    cursor: pointer;
+}
+
+.container {
+    width: 50%;
+    margin: 10vh auto 0;
+    padding-top: 5vh;
+    height: 80vh;
+    background-color: #ffffff;
+    border: 0.1rem solid rgb(0, 0, 0);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+
+.contact {
+    height: 20%;
+    border: 0.1rem solid black;
+    margin-bottom: 1rem;
+    display: flex;
+    justify-content:space-around;
+    align-items: center;
+    font-size: 2rem;
+}
+
+.contact:hover {
+    cursor: pointer;
+  
+}
+
+.input{
+    font-size: 1.6em;
+    border-radius: 0.5rem;
+    height: 4vh;
+
+    width: 80%;
+    margin-bottom: 1rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.form{
+    height: 10vh;
+    width: 40%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+}
+
+
+
+
+.contacts{
+    width: 80%;
+    margin-bottom: 5vh;
+
+    display: flex;
+    justify-content:center;
+    align-items: center;
+}
+
+.controls-wrapper {
+    display: flex;
+    height: 100%;
+}
+
+.contacts .list-container {
+    width: 100%;
+    padding: 1rem;
+    border: 0.1rem solid black;
+    height: 32rem;
+    overflow-y: scroll;
+}
+
