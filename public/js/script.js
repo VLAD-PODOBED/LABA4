@@ -1,6 +1,35 @@
 function addContact() {
-    const name = document.getElementsByName('name')[0].value;
-    const phone = document.getElementsByName('phone')[0].value;
+    const nameInput = document.getElementsByName('name')[0];
+    const phoneInput = document.getElementsByName('phone')[0];
+
+    const name = nameInput.value;
+    const phone = phoneInput.value;
+
+    const nameRegex = /^[a-zA-ZА-Яа-я]+$/;
+    const isValidName = nameRegex.test(name);
+
+
+    const phoneRegex = /^\d+$/;
+    const isValidPhone = phoneRegex.test(phone);
+
+    if (!isValidName) {
+        alert("Недопустимое имя");
+        nameInput.classList.add('invalid');
+        return;
+    } else {
+
+        nameInput.classList.remove('invalid');
+    }
+
+    if (!isValidPhone) {
+
+        alert("Недопустимый номер телефона");
+        phoneInput.classList.add('invalid');
+        return;
+    } else {
+
+        phoneInput.classList.remove('invalid');
+    }
 
     fetch('/add', {
         method: 'POST',
@@ -11,11 +40,12 @@ function addContact() {
         .then(() => window.location.href = '/');
 }
 
+
 async function editContact() {
     const id = document.querySelector('.form').getAttribute('data-key');
     const name = document.querySelector('input[name="name"]').value;
     const phone = document.querySelector('input[name="phone"]').value;
-
+    
     try {
         await fetch(`/update?id=${id}`, {
             method: 'POST',
@@ -26,7 +56,6 @@ async function editContact() {
     } catch (e) {
         console.log(e);
     }
-
 }
 
 async function deleteContact() {

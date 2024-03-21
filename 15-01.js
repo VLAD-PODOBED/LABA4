@@ -21,7 +21,6 @@ app.use('/', contactRouter);
 
 app.listen(process.env.PORT || port, () => {
     console.log(`http://localhost:${port}`);
-    //console.log('https://lab04-express.herokuapp.com');
 });
 
 
